@@ -11,6 +11,7 @@ let datas = {
 
 function handleExitClick(event, self) {
   self.exit();
+  document.body.classList.remove('page_smartbanner_open')
   event.preventDefault();
 }
 
@@ -189,6 +190,10 @@ export default class SmartBanner {
       setContentPosition(this.height);
     }
     addEventListeners(this);
+
+    document.body.classList.add('page_smartbanner_open');
+
+    console.log({options: this.options, platform: this.platform})
   }
 
   exit() {
